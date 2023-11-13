@@ -19,7 +19,7 @@ public abstract class Repository <T> : IRepository<T> where T : EntityBase
 
     public async Task SaveAsync(IEnumerable<T> entitiesToCleanTracking)
     {
-        _dbContext.SaveChanges();
+        await _dbContext.SaveChangesAsync();
         foreach(var entity in entitiesToCleanTracking)
         {
             _dbContext.Entry(entity).State = EntityState.Deleted;
@@ -28,7 +28,7 @@ public abstract class Repository <T> : IRepository<T> where T : EntityBase
 
     public async Task SaveAsync(T entitiesToCleanTracking)
     {
-        _dbContext.SaveChanges();
+        await _dbContext.SaveChangesAsync();
         _dbContext.Entry(entitiesToCleanTracking).State = EntityState.Deleted;
     }
 }
