@@ -1,6 +1,5 @@
-﻿namespace Webshop.API.Core.Models
+﻿namespace Webshop.API.Core.Models;
+
+public class ProductViewModel
 {
-    public class ProductViewModel
-    {
-    }
 }

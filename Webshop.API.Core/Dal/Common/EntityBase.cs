@@ -1,10 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Webshop.API.Core.Dal.Common
+namespace Webshop.API.Core.Dal.Common;
+
+public class EntityBase
 {
-    public class EntityBase
-    {
-        [Key]
-        public int Identifier { get; set; }
-    }
+    [Key]
+    public int Identifier { get; set; }
 }

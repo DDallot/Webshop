@@ -1,9 +1,8 @@
 ﻿using Webshop.API.Core.Dal.Common;
 
-namespace Webshop.API.Core.Dal.ProductDal
+namespace Webshop.API.Core.Dal.ProductDal;
+
+public interface IProductRepository : IRepository<Product>
 {
-    public interface IProductRepository : IRepository<Product>
-    {
-        IQueryable<Product> GetProducts();
-    }
+    IQueryable<Product> GetProducts();
 }
