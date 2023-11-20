@@ -1,6 +1,6 @@
 ﻿using System.Text;
-using Webshop.API.Core.Dal.CartProductDal;
-using Webshop.API.Core.Services.DiscountRules;
+using Webshop.API.Dal.CartProductDal;
+using Webshop.API.Core.Services.DiscountsService.v2.DiscountRules;
 
 namespace Webshop.API.Core.Services.DiscountsService.v2;
 

@@ -1,6 +1,6 @@
-﻿using Webshop.API.Core.Dal.Common;
+﻿using Webshop.API.Dal.Common;
 
-namespace Webshop.API.Core.Dal.ProductDal;
+namespace Webshop.API.Dal.ProductDal;
 
 public class ProductRepository : Repository<Product>, IProductRepository
 {

@@ -1,6 +1,6 @@
-﻿using Webshop.API.Core.Dal.Common;
+﻿using Webshop.API.Dal.Common;
 
-namespace Webshop.API.Core.Dal.ShoppingCartDal;
+namespace Webshop.API.Dal.ShoppingCartDal;
 
 public class ShoppingCartRepository : Repository<ShoppingCart>, IShoppingCartRepository
 {

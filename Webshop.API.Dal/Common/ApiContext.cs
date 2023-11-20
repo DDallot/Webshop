@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Webshop.API.Core.Dal.CartProductDal;
-using Webshop.API.Core.Dal.ProductDal;
-using Webshop.API.Core.Dal.ShoppingCartDal;
+using Webshop.API.Dal.CartProductDal;
+using Webshop.API.Dal.ProductDal;
+using Webshop.API.Dal.ShoppingCartDal;
 
-namespace Webshop.API.Core.Dal.Common;
+namespace Webshop.API.Dal.Common;
 
 public class ApiContext : DbContext
 {

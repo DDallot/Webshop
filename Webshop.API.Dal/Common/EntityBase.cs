@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Webshop.API.Core.Dal.Common;
+namespace Webshop.API.Dal.Common;
 
 public class EntityBase
 {

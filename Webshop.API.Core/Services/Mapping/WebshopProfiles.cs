@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using Webshop.API.Contracts.v2.Products.Response;
 using Webshop.API.Contracts.v2.ShoppingCarts.Response;
-using Webshop.API.Core.Dal.CartProductDal;
-using Webshop.API.Core.Dal.ProductDal;
+using Webshop.API.Dal.CartProductDal;
+using Webshop.API.Dal.ProductDal;
 
 namespace Webshop.API.Core.Services.Mapping;
 

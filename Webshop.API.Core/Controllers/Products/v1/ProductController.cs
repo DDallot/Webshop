@@ -16,9 +16,16 @@ public class ProductController : ControllerBase
         _logger = logger;
     }
 
+    /// <summary>
+    /// Select version 2, version 1 is for testing purposes only
+    /// </summary>
+    /// <returns></returns>
     [HttpGet(Name = "GetProducts")]
     public IEnumerable<ProductViewModel> Get()
     {
-        throw new NotImplementedException();
+        return new List<ProductViewModel>
+        {
+            new ProductViewModel{ Status = "Select version 2, version 1 is for testing purposes only."}
+        };
     }
 }

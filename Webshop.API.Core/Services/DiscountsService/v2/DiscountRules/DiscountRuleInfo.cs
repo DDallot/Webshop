@@ -1,4 +1,4 @@
-﻿namespace Webshop.API.Core.Services.DiscountRules;
+﻿namespace Webshop.API.Core.Services.DiscountsService.v2.DiscountRules;
 
 public class DiscountRuleInfo
 {

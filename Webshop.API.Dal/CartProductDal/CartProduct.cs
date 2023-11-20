@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Webshop.API.Core.Dal.Common;
-using Webshop.API.Core.Dal.ShoppingCartDal;
+using Webshop.API.Dal.Common;
+using Webshop.API.Dal.ShoppingCartDal;
 
-namespace Webshop.API.Core.Dal.CartProductDal;
+namespace Webshop.API.Dal.CartProductDal;
 
 public class CartProduct : EntityBase
 {

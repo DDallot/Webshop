@@ -1,4 +1,4 @@
-﻿namespace Webshop.API.Core.Dal.Common;
+﻿namespace Webshop.API.Dal.Common;
 
 public interface IRepository<T> where T : EntityBase
 {

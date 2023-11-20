@@ -1,9 +1,9 @@
 ﻿using Xunit;
-using Webshop.API.Core.Services.DiscountRules;
 using Webshop.API.Core.Services.DiscountsService.v2;
-using Webshop.API.Core.Dal.CartProductDal;
+using Webshop.API.Dal.CartProductDal;
 using FluentAssertions;
-using Webshop.API.Core.Dal.ProductDal;
+using Webshop.API.Dal.ProductDal;
+using Webshop.API.Core.Services.DiscountsService.v2.DiscountRules;
 
 namespace Webshop.API.Xunit.DiscountsService;
 

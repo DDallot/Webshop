@@ -1,10 +1,10 @@
-﻿using Webshop.API.Core.Dal.CartProductDal;
-using Webshop.API.Core.Dal.ProductDal;
-using Webshop.API.Core.Dal.ShoppingCartDal;
-using Webshop.API.Core.Services.DiscountRules;
+﻿using Webshop.API.Dal.CartProductDal;
+using Webshop.API.Dal.ProductDal;
+using Webshop.API.Dal.ShoppingCartDal;
 using Webshop.API.Core.Services.DiscountsService.v2;
 using Webshop.API.Core.Services.ProductsService.v2;
 using Webshop.API.Core.Services.ShoppingCartsService.v2;
+using Webshop.API.Core.Services.DiscountsService.v2.DiscountRules;
 
 namespace Webshop.API.Core.Infrastructure;
 

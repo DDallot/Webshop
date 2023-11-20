@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Webshop.API.Core.Dal.Common;
+namespace Webshop.API.Dal.Common;
 
 public abstract class Repository <T> : IRepository<T> where T : EntityBase
 {

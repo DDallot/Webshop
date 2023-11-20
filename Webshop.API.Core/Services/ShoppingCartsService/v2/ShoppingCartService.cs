@@ -3,10 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using System.Text;
 using Webshop.API.Contracts.v2.Common;
 using Webshop.API.Contracts.v2.ShoppingCarts.Response;
-using Webshop.API.Core.Dal.CartProductDal;
-using Webshop.API.Core.Dal.ProductDal;
-using Webshop.API.Core.Dal.ShoppingCartDal;
+using Webshop.API.Dal.CartProductDal;
+using Webshop.API.Dal.ProductDal;
+using Webshop.API.Dal.ShoppingCartDal;
 using Webshop.API.Core.Services.DiscountsService.v2;
+using Webshop.API.Core.Services.ProductsService.v2;
 
 namespace Webshop.API.Core.Services.ShoppingCartsService.v2;
 
@@ -17,19 +18,22 @@ public class ShoppingCartService : IShoppingCartService
     private readonly IProductRepository _productRepository;
     private readonly IDiscountService _discountService;
     private readonly IMapper _mapper;
+    private readonly ILogger<ShoppingCartService> _logger;
 
     public ShoppingCartService(
         IShoppingCartRepository shoppingCartRepository,
         ICartProductRepository cartProductRepository,
         IProductRepository productRepository,
         IDiscountService discountService,
-        IMapper mapper)
+        IMapper mapper,
+        ILogger<ShoppingCartService> logger)
     {
         _shoppingCartRepository = shoppingCartRepository ?? throw new ArgumentNullException(nameof(shoppingCartRepository));
         _cartProductRepository = cartProductRepository ?? throw new ArgumentNullException(nameof(cartProductRepository));
         _productRepository = productRepository ?? throw new ArgumentNullException(nameof(productRepository));
         _discountService = discountService ?? throw new ArgumentNullException(nameof(discountService));
         _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
     public async Task<ItemResult<bool>> AddProductAsync(string user, int productId)
@@ -42,7 +46,7 @@ public class ShoppingCartService : IShoppingCartService
             var product = _productRepository.GetById(productId);
 
             if(product == null) 
-                return new ItemResult<bool> { HasError = true, Errors = new List<string> { "Product not found." } };
+                return new ItemResult<bool> { HasError = true, Error = "Product not found."};
             if (product.Quantity < 1) 
                 return new ItemResult<bool> { Item = false };
 
@@ -75,14 +79,11 @@ public class ShoppingCartService : IShoppingCartService
             return await Task.FromResult(new ItemResult<bool> { Item = true });
         } catch (Exception ex)
         {
+            _logger.LogError("Error on service {0}, method {1}, exeception {2}", nameof(ShoppingCartService), nameof(AddProductAsync), ex.Message);
             return new ItemResult<bool>
             {
                 HasError = true,
-                Errors = new List<string>()
-                {
-                    $"Error on service {nameof(ShoppingCartService)}, method {nameof(AddProductAsync)}",
-                    ex.Message
-                }
+                Error = "Error adding a Product."
             };
         }
     }
@@ -140,14 +141,12 @@ public class ShoppingCartService : IShoppingCartService
         }
         catch (Exception ex)
         {
+            _logger.LogError("Error on service {0}, method {1}, exeception {2}", nameof(ShoppingCartService), nameof(GetSummaryAsync), ex.Message);
+
             return new ItemResult<ShoppingCartResponse>
             {
                 HasError = true,
-                Errors = new List<string>()
-                {
-                    $"Error on service {nameof(ShoppingCartService)}, method {nameof(GetSummaryAsync)}",
-                    ex.Message
-                }
+                Error = "Error getting the Summary."
             };
         }
     }

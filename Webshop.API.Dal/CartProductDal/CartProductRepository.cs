@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Webshop.API.Core.Dal.Common;
+using Webshop.API.Dal.Common;
 
-namespace Webshop.API.Core.Dal.CartProductDal;
+namespace Webshop.API.Dal.CartProductDal;
 
 public class CartProductRepository : Repository<CartProduct>, ICartProductRepository
 {

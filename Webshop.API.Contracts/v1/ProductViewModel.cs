@@ -2,4 +2,5 @@
 
 public class ProductViewModel
 {
+    public string Status { get; set; }
 }

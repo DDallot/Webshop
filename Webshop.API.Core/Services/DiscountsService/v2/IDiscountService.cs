@@ -1,4 +1,4 @@
-﻿using Webshop.API.Core.Dal.CartProductDal;
+﻿using Webshop.API.Dal.CartProductDal;
 
 namespace Webshop.API.Core.Services.DiscountsService.v2;
 

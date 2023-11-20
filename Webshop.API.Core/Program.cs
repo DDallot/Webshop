@@ -3,7 +3,7 @@ using Asp.Versioning.ApiExplorer;
 using Microsoft.Extensions.Options;
 using System.Reflection;
 using Webshop.API.Core.Configs;
-using Webshop.API.Core.Dal.Common;
+using Webshop.API.Dal.Common;
 using Webshop.API.Core.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
